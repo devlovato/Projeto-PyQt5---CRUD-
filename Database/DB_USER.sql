@@ -6,7 +6,8 @@ CREATE TABLE tb_user(
     tb_user_nome varchar(100) not null,
     tb_user_email varchar(100) not null,
     tb_user_pass varchar(100)not null,
-    tb_user_sexo char(1)not null
+    tb_user_sexo char(1)not null,
+    tb_user_permission BOOLEAN
 );
 
 select*from tb_user;
