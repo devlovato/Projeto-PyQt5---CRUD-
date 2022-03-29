@@ -2,7 +2,8 @@
 from ast import Return
 from cmath import log
 from turtle import st
-from PyQt5 import uic, QtWidgets
+from PyQt5 import uic, QtWidgets,QtGui
+from PyQt5.QtWidgets import QMessageBox
 import mysql.connector
 
 conexao = mysql.connector.connect(host="localhost",user="root",password="",database="db_user")
@@ -17,18 +18,30 @@ def Login():
 
     try:
         # USANDO A FORMATAÇAO .FORMAT PARA FOMATAR O DADO VINDO DA MANEIRA CORRETA
-        cursor.execute("SELECT tb_user_pass, tb_user_email  FROM tb_user WHERE tb_user_email='{}'".format(Email))
+        cursor.execute("SELECT tb_user_pass, tb_user_email FROM tb_user WHERE tb_user_email='{}'".format(Email))
         password_db = cursor.fetchall()
-        # print(password_db[0][0])
+
+        cursor.execute("SELECT tb_user_permission tb_user_pass, tb_user_email FROM tb_user WHERE tb_user_email='{}'".format(Email))
+        permissao_db = cursor.fetchall()
+        print(password_db[0][0])
+        print(permissao_db[0][0])
         
-        if Password == password_db[0][0]:
+        if Password == password_db[0][0] and permissao_db[0][0] == 1:
             login.label_4.text()
-            login.label_4.setText("DADOS CORRETOS")
-            # print("DADOS CORRETOS")
+            login.label_4.setText("Dados Corretos ADM")
+            print("Dados Corretos ADM")
+            dash.show()
+            login.close()
+        elif Password == password_db[0][0]:
+            login.label_4.text()
+            login.label_4.setText("BEM VINDO NAO ADM")
+            print("Dados Corretos NAO ADM")
+            dash.upt_btn.hide()
+            dash.dell_btn.hide()
             dash.show()
             login.close()
         else:
-            login.label_4.setText("DADOS INCORRETOS")
+            login.label_4.setText("E-mail ou senha Incorretos")
             # print("DADOS INCORRETOS")
     except:
         print("OCORREU UM ERRO NA VALIDAÇAO DO FORMULARIO")
@@ -59,23 +72,29 @@ def Listar():
     cursor.execute("SELECT*FROM tb_user")
     dados_lidos = cursor.fetchall()
     dash.tableWidget.setRowCount(len(dados_lidos))
-    dash.tableWidget.setColumnCount(4)
+    dash.tableWidget.setColumnCount(6)
     for i in range(0, len(dados_lidos)):
-        for j in range(0,4):
+        for j in range(0,6):
             dash.tableWidget.setItem(i,j,QtWidgets.QTableWidgetItem(str(dados_lidos[i][j])))
+
 def Deletar():
-    linha = dash.tableWidget.currentRow()
-    dash.tableWidget.removeRow(linha)
-    try:
-        cursor.execute("SELECT tb_user_id FROM tb_user")
-        dados_id = cursor.fetchall()
-        dados_limpo = dados_id[linha][0]
-        # # delete = f'DELETE FROM tb_user WHERE tb_user_id="{dados_limpo}"'
-        cursor.execute("DELETE FROM tb_user WHERE tb_user_id="+str(dados_limpo))
-        conexao.commit()
-        print("FOI APAGADO COM SUCESSO",dados_limpo)
-    except:
-        print("DEU ERRO")   
+
+    if (dash.tableWidget.cellClicked):
+        linha = dash.tableWidget.currentRow()
+        dash.tableWidget.removeRow(linha)
+        print('SELECIONADO')
+        try:
+            cursor.execute("SELECT tb_user_id FROM tb_user")
+            dados_id = cursor.fetchall()
+            dados_limpo = dados_id[linha][0]
+            # # delete = f'DELETE FROM tb_user WHERE tb_user_id="{dados_limpo}"'
+            cursor.execute("DELETE FROM tb_user WHERE tb_user_id="+str(dados_limpo))
+            conexao.commit()
+            print("FOI APAGADO COM SUCESSO",dados_limpo)
+        except:
+            print("DEU ERRO")   
+    else:
+        print('LINHA NAO FOI CLICADA')
 
 
 # FUNÇOES DE CHAMADA E FECHAMENTO DE FORMULARIO
@@ -112,3 +131,6 @@ login.pushButton_2.clicked.connect(ChamaCad)
 
 login.show()
 app.exec()
+
+
+#PasswordEchoOnEdit oculta a senha
