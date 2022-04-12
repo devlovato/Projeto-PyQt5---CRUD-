@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>398</width>
-    <height>405</height>
+    <width>392</width>
+    <height>496</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -119,7 +119,11 @@ border-style:outset;
 border-radius:5px;
 border-color: Black;
 padding:10px;
-border-width:1px;</string>
+border-width:1px;
+
+QLineEdit::hover{
+ border:3px solid:#fff;
+}</string>
    </property>
    <property name="placeholderText">
     <string>Name</string>
@@ -184,10 +188,20 @@ border-width:1px;</string>
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>370</y>
-     <width>181</width>
-     <height>21</height>
+     <y>430</y>
+     <width>201</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 0);</string>
    </property>
    <property name="text">
     <string/>
@@ -216,6 +230,26 @@ border-width:1px;</string>
    </property>
    <property name="openExternalLinks">
     <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>370</y>
+     <width>191</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border-style:outset;
+border-radius:20px;
+border-color: white;
+border-width:1px;</string>
+   </property>
+   <property name="text">
+    <string>Voltar</string>
    </property>
   </widget>
  </widget>
