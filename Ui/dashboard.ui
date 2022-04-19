@@ -209,7 +209,7 @@ border-width:1px;</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../../sair.png</pixmap>
+    <pixmap>../../../../../../sair.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -323,6 +323,33 @@ border-width:1px;</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_upt_user">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>320</y>
+     <width>201</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);
+border-style:outset;
+border-radius:10px;
+border-color:#FFFFFF;
+border-width:1px;</string>
+   </property>
+   <property name="text">
+    <string>ATUALIZAR</string>
    </property>
   </widget>
  </widget>
