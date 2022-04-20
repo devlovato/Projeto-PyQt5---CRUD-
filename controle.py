@@ -1,6 +1,6 @@
-from ast import IsNot, Return
-from asyncio.windows_events import NULL
+from ast import Global, IsNot, Return
 import email
+from msilib.schema import ComboBox
 from time import sleep, time
 from PyQt5 import uic,QtGui,QtCore,QtWidgets
 from PyQt5.QtWidgets import QTableWidgetItem 
@@ -10,17 +10,14 @@ from pyfiglet import figlet_format
 
 from termcolor import colored
 Texto = figlet_format("PyQt5 e MySQL ",width=200)
-Texto = colored(Texto,"yellow")
+Texto = colored(Texto,"red")
 
 print(Texto)
 
 # result = pyfiglet.figlet_format("PyQt5 e MYSQL")
 # print(result)
 
-
 conexao = mysql.connector.connect(host="localhost",user="root",password="",database="db_user")
-
-
 
 # METODO DE LOGIN 
 def Login(): 
@@ -96,20 +93,46 @@ def Listar(Email,Password):
         id = cursor.fetchall()
         cursor.execute('SELECT tb_user_nome FROM tb_user WHERE tb_user_email="{}" and tb_user_pass="{}"'.format(Email,Password))
         nome = cursor.fetchall()
+        cursor.execute('SELECT tb_user_sexo FROM tb_user WHERE tb_user_email="{}" and tb_user_pass="{}"'.format(Email,Password))
+        info = cursor.fetchall()
+
+        print(info[0][0])
+        sexo = ""
+        if info[0][0] =='':
+            print('sem sexo')
+
+        elif info[0][0]=="M":
+           dash.rdb_masc.setChecked(True)
+           sexo = "M"
+
+        elif info[0][0]=="F":
+           dash.rdb_femi.setChecked(True)
+           sexo = "F"
+
+        print(sexo)
+
+
         dash.tableWidget.hide()   
         dash.cad_btn.hide()
         dash.btn_upt_user.show()
         dash.dell_btn.hide()
-        dash.resize(400, 420)
-
+        dash.resize(400, 450)
+        dash.label_4.hide()
+        dash.comboBox.hide()
+        dash.groupBox.hide()
         dash.pushButton_2.move(280,18)
+
+        # HERE 
+        dash.label_5.move(100,315)
+        dash.rdb_masc.move(100,340)
+        dash.rdb_femi.move(190,340)
 
         dash.label.move(100,70)
         dash.id.move(100,120)
         dash.nome.move(100,170)
         dash.email.move(100,220)
         dash.senha.move(100,270)
-        dash.btn_upt_user.move(100,320)
+        dash.btn_upt_user.move(100,380)
         dash.btn_upt_user.resize(201,41)
         dash.upt_btn.hide()
 
@@ -117,6 +140,7 @@ def Listar(Email,Password):
         dash.show()
         dash.label.setFont(QtGui.QFont("Arial", 18, QtGui.QFont.Bold))
         dash.label.setText("Bem Vindo, Usuario")
+
         dash.id.setText(str(id[0][0]))
         dash.nome.setText(nome[0][0])
         dash.email.setText(Email)
@@ -125,19 +149,18 @@ def Listar(Email,Password):
     except ValueError:
         print("OCORREU UM ERRO ",ValueError)
     return conexao
-
 # METODO DELETAR
 def Deletar():
         linha = dash.tableWidget.currentRow()
         dash.tableWidget.removeRow(linha)
         if dash.tableWidget.rowCount()>0:
-            # print('ainda há linha')
             try:
                 cursor = conexao.cursor()
                 cursor.execute("SELECT tb_user_id FROM tb_user")
                 dados_id = cursor.fetchall()
                 if dados_id ==[]:
-                    dash.label_2.setText("Não há registros!")
+                    dash.label_2.setStyleSheet ('color: red')
+                    dash.label_2.setText("NÃO HÁ REGISTRO !")
                     dash.close()
                 else:
                     dados_limpo = dados_id[linha][0]
@@ -149,21 +172,24 @@ def Deletar():
                     dash.senha.setText("")
                     # print("FOI APAGADO COM SUCESSO",dados_limpo)
                     dash.label_2.text()
-                    dash.label_2.setText("ID '"+str(dados_limpo)+"' DELETADO!")
+                    dash.label_2.setStyleSheet ('color: Green')
+                    dash.label_2.setText("DELETADO!")
             except ValueError:
                 print("OCORREU UM ERRO",ValueError)
         else:
-            dash.label_2.setText("Não há registros!")
+            dash.label_2.setStyleSheet ('color: red')
+            dash.label_2.setText("NÃO HÁ REGISTROS!")
             # dash.close()
             
         return conexao
 # METODO LISTAR, APENAS PARA USUARIOS ADM 
 def ListarAdm():
 
+
     dash.pushButton_2.move(760,30)
-    dash.resize(899,535)
+    dash.resize(945,541)
     dash.upt_btn.resize(161,51)
-    dash.upt_btn.move(430,400)
+    dash.upt_btn.move(450,390)
 
     dash.label_2.setText("")
     dash.label.move(50,30)
@@ -172,7 +198,7 @@ def ListarAdm():
     dash.email.move(50,210)
     dash.senha.move(50,260)
     dash.label.setFont(QtGui.QFont("Arial", 28, QtGui.QFont.Bold))
-    dash.label_2.move(30,470)
+    dash.label_2.move(160,470)
     dash.show()
     login.close()
     dash.tableWidget.show()   
@@ -180,6 +206,10 @@ def ListarAdm():
     dash.cad_btn.show()
     dash.dell_btn.show()
 
+    dash.label_5.move(60,310)
+    dash.rdb_masc.move(60,340)
+    dash.rdb_femi.move(150,340)
+    dash.comboBox.show()
     dash.id.setText("")
     dash.nome.setText("")
     dash.email.setText("")
@@ -200,9 +230,6 @@ def ListarAdm():
     except ValueError:
         print('ERRO',ValueError)
     return conexao
-
-
-
 def PegaDados():
     try:
         linha = dash.tableWidget.currentRow()
@@ -215,28 +242,50 @@ def PegaDados():
 
         global valor_do_id
         valor_do_id = id
-        # print(valor_do_id)
-        # print(usuario[0][0])
-        # print(usuario[0][1])
+
         dash.id.setText(str(usuario[0][0]))
         dash.nome.setText(str(usuario[0][1]))
         dash.email.setText(str(usuario[0][2]))
         dash.senha.setText(str(usuario[0][3]))
+        global sexo
+        sexo = ""
+        if usuario[0][4]=="":
+            print('SEM DADOS')
+        elif usuario[0][4]=="M":
+            sexo ="M"
+            dash.rdb_masc.setChecked(True)
+        elif usuario[0][4]=="F":
+            sexo = "F"
+            dash.rdb_femi.setChecked(True)
+
+
+        if int(usuario[0][5]) == 0:
+            permissao = dash.comboBox.setCurrentText(str(usuario[0][5]))
+        else:
+            permissao = dash.comboBox.setCurrentText(str(usuario[0][5]))
+
     except ValueError:
         print('OCORREU UM ERRO',ValueError)
 def AlteraDados():
     nome =  dash.nome.text()
     email=  dash.email.text()
     senha=  dash.senha.text()
-
+    sexo =""
+    if dash.rdb_masc.isChecked():
+        sexo = "M"
+    elif dash.rdb_femi.isChecked():
+        sexo ="F"
+    permissao = dash.comboBox.currentText()
     try:
         cursor = conexao.cursor()
         if(nome=="" and email =="" and senha==""):
-            print("Os campos vazios!")
+            dash.label_2.setText("PREENCHA OS CAMPOS!")
+            dash.label_2.setStyleSheet ('color: red')
         else:
-            cursor.execute("UPDATE tb_user SET tb_user_nome = '{}', tb_user_email ='{}',tb_user_pass='{}' WHERE tb_user_id = {}".format(nome,email,senha,valor_do_id))     
+            cursor.execute("UPDATE tb_user SET tb_user_nome = '{}', tb_user_email ='{}',tb_user_pass='{}', tb_user_sexo='{}',tb_user_permission='{}' WHERE tb_user_id = {}".format(nome,email,senha,sexo,permissao,valor_do_id))     
             conexao.commit()
-            dash.label_2.setText("Alterado!")
+            dash.label_2.setStyleSheet ('color: green')
+            dash.label_2.setText("ALTERADO!")
             dash.id.setText("")
             dash.nome.setText("")
             dash.email.setText("")
@@ -244,21 +293,26 @@ def AlteraDados():
     except ValueError:
         print('ERRO',ValueError)
     return conexao
-
 def AlteraDadosUsuario():
     id = dash.id.text()
     nome =  dash.nome.text()
     email=  dash.email.text()
     senha=  dash.senha.text()
     dash.label_2.move(150,370)
+    sexo = ""
+    if dash.rdb_femi.isChecked():
+        sexo = "F"
+    elif dash.rdb_masc.isChecked():
+        sexo = "M"
     try:
         cursor = conexao.cursor()
         if(nome=="" and email =="" and senha==""):
             dash.label_2.setText("Os campos vazios!")  
         else:
-            cursor.execute("UPDATE tb_user SET tb_user_nome = '{}', tb_user_email ='{}',tb_user_pass='{}' WHERE tb_user_id = {}".format(nome,email,senha,id))     
+            cursor.execute("UPDATE tb_user SET tb_user_nome = '{}', tb_user_email ='{}',tb_user_pass='{}',tb_user_sexo ='{}' WHERE tb_user_id = {}".format(nome,email,senha,sexo,id))     
             conexao.commit()
-            dash.label_2.setText("Alterado!")
+            dash.label_2.setStyleSheet ('color: Green')
+            dash.label_2.setText("ALTERADO!")
 
     except ValueError:
         print('ERRO',ValueError)
@@ -281,7 +335,6 @@ def closeDash():
     dash.close()
     login.show()
 
-  
 app = QtWidgets.QApplication([])
 
 cadastro = uic.loadUi('Projeto-PyQt5---CRUD-/Ui/cadastro.ui')
