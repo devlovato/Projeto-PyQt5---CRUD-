@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(20, 26, 41);</string>
+   <string notr="true">background-color: rgb(60,60,60);</string>
   </property>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
@@ -71,11 +71,18 @@ border-width:1px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);
+    <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
 border-style:outset;
 border-radius:20px;
 border-color: white;
-border-width:1px;</string>
+border-width:1px;
+}
+QPushButton:hover{
+background-color:#00FF7F	;
+}
+
+</string>
    </property>
    <property name="text">
     <string>Cadastrar</string>
@@ -242,11 +249,17 @@ QLineEdit::hover{
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);
+    <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
 border-style:outset;
 border-radius:20px;
 border-color: white;
-border-width:1px;</string>
+border-width:1px;
+}
+QPushButton:hover{
+background-color:#1E90FF	;
+}
+</string>
    </property>
    <property name="text">
     <string>Voltar</string>

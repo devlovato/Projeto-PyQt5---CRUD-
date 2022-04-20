@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>398</width>
+    <width>383</width>
     <height>405</height>
    </rect>
   </property>
@@ -20,7 +20,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(20, 26, 41);</string>
+   <string notr="true">background-color: rgb(60,60,60);</string>
   </property>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
@@ -32,12 +32,19 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
+    <string notr="true">QLineEdit{
+background-color: rgb(255, 255, 255);
 border-style:outset;
 border-radius:5px;
 border-color: Black;
 padding:10px;
-border-width:1px;</string>
+border-width:1px;
+border : 2px solid black	;
+}
+QLineEdit:hover{
+border : 2px solid #1E90FF	;
+
+}</string>
    </property>
    <property name="placeholderText">
     <string>E-mail</string>
@@ -53,12 +60,19 @@ border-width:1px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
+    <string notr="true">QLineEdit{
+background-color: rgb(255, 255, 255);
 border-style:outset;
 border-radius:5px;
 border-color: Black;
 padding:10px;
-border-width:1px;</string>
+border-width:1px;
+border : 2px solid black	;
+}
+QLineEdit:hover{
+border : 2px solid #1E90FF	;
+
+}</string>
    </property>
    <property name="echoMode">
     <enum>QLineEdit::Password</enum>
@@ -83,11 +97,20 @@ border-width:1px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);
+    <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
 border-style:outset;
 border-radius:20px;
 border-color: white;
-border-width:1px;</string>
+border-width:1px;
+}
+QPushButton:hover{
+background-color:#1E90FF	;
+}
+
+
+
+</string>
    </property>
    <property name="text">
     <string>Log in </string>
@@ -161,11 +184,18 @@ border-width:1px;</string>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);
+    <string notr="true">QPushButton{
+color: rgb(255, 255, 255);
 border-style:outset;
 border-radius:20px;
 border-color: white;
-border-width:1px;</string>
+border-width:1px;
+}
+QPushButton:hover{
+background-color:#00FF7F	;
+}
+
+</string>
    </property>
    <property name="text">
     <string>Register</string>
