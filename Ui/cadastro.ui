@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(60,60,60);</string>
+   <string notr="true">background: #F1F1F1;</string>
   </property>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
@@ -26,12 +26,19 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
+    <string notr="true">QLineEdit{
+background-color: rgb(255, 255, 255);
 border-style:outset;
 border-radius:5px;
 border-color: Black;
 padding:10px;
-border-width:1px;</string>
+border-width:1px;
+border : 2px solid black	;
+}
+QLineEdit:hover{
+border : 2px solid #1E90FF	;
+
+}</string>
    </property>
    <property name="placeholderText">
     <string>E-mail</string>
@@ -47,12 +54,19 @@ border-width:1px;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
+    <string notr="true">QLineEdit{
+background-color: rgb(255, 255, 255);
 border-style:outset;
 border-radius:5px;
 border-color: Black;
 padding:10px;
-border-width:1px;</string>
+border-width:1px;
+border : 2px solid black	;
+}
+QLineEdit:hover{
+border : 2px solid #1E90FF	;
+
+}</string>
    </property>
    <property name="echoMode">
     <enum>QLineEdit::Password</enum>
@@ -77,6 +91,7 @@ border-style:outset;
 border-radius:20px;
 border-color: white;
 border-width:1px;
+background: #968C8C;
 }
 QPushButton:hover{
 background-color:#00FF7F	;
@@ -105,7 +120,7 @@ background-color:#00FF7F	;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Register</string>
@@ -121,15 +136,18 @@ background-color:#00FF7F	;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
+    <string notr="true">QLineEdit{
+background-color: rgb(255, 255, 255);
 border-style:outset;
 border-radius:5px;
 border-color: Black;
 padding:10px;
 border-width:1px;
+border : 2px solid black	;
+}
+QLineEdit:hover{
+border : 2px solid #1E90FF	;
 
-QLineEdit::hover{
- border:3px solid:#fff;
 }</string>
    </property>
    <property name="placeholderText">
@@ -146,7 +164,7 @@ QLineEdit::hover{
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Masculino </string>
@@ -162,7 +180,7 @@ QLineEdit::hover{
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Feminino</string>
@@ -185,7 +203,7 @@ QLineEdit::hover{
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Qual é o seu Genero?</string>
@@ -223,6 +241,9 @@ QLineEdit::hover{
      <height>71</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);</string>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -255,6 +276,7 @@ border-style:outset;
 border-radius:20px;
 border-color: white;
 border-width:1px;
+background: #968C8C;
 }
 QPushButton:hover{
 background-color:#1E90FF	;

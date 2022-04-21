@@ -14,12 +14,12 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(60,60,60);</string>
+   <string notr="true">background: #F1F1F1;</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>30</x>
      <y>30</y>
      <width>541</width>
      <height>41</height>
@@ -27,13 +27,13 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>20</pointsize>
+     <pointsize>16</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string/>
@@ -42,7 +42,7 @@
   <widget class="QPushButton" name="cad_btn">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>290</x>
      <y>390</y>
      <width>161</width>
      <height>51</height>
@@ -63,11 +63,9 @@ border-style:outset;
 border-radius:10px;
 border-color:#FFFFFF;
 border-width:1px;
+background: #968C8C;
+}
 
-}
-QPushButton:hover{
-background-color:#4CAF50;
-}
 </string>
    </property>
    <property name="text">
@@ -91,11 +89,9 @@ border-style:outset;
 border-radius:10px;
 border-color:#FFFFFF;
 border-width:1px;
-
+background: #968C8C;
 }
-QPushButton:hover{
-background-color:#696969;
-}</string>
+</string>
    </property>
    <property name="text">
     <string>SAIR</string>
@@ -104,7 +100,7 @@ background-color:#696969;
   <widget class="QPushButton" name="upt_btn">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>460</x>
      <y>390</y>
      <width>161</width>
      <height>51</height>
@@ -125,10 +121,7 @@ border-style:outset;
 border-radius:10px;
 border-color:#FFFFFF;
 border-width:1px;
-
-}
-QPushButton:hover{
-background-color:#FFC107;
+background: #968C8C;
 }
 </string>
    </property>
@@ -139,7 +132,7 @@ background-color:#FFC107;
   <widget class="QPushButton" name="dell_btn">
    <property name="geometry">
     <rect>
-     <x>620</x>
+     <x>630</x>
      <y>390</y>
      <width>161</width>
      <height>51</height>
@@ -160,10 +153,7 @@ border-style:outset;
 border-radius:10px;
 border-color:#FFFFFF;
 border-width:1px;
-
-}
-QPushButton:hover{
-background-color:#FF5252;
+background: #968C8C;
 }
 </string>
    </property>
@@ -188,11 +178,11 @@ background-color:#FF5252;
    <property name="styleSheet">
     <string notr="true">QWidget{
 background-color: rgb(255, 255, 255);
-	color: rgb(0, 0, 0);
+color: rgb(0, 0, 0);
 }
 
 QHeaderView::section{
-background-color: rgb(20, 26, 41);
+background: #968C8C;
 padding:2px;
 color:white;
 border: 1px solid #fffff8;
@@ -260,12 +250,17 @@ border:1pxsolid #ff0000;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
+    <string notr="true">QLineEdit{
+background-color: rgb(255, 255, 255);
 border-style:outset;
 border-radius:5px;
 border-color: Black;
 padding:10px;
-border-width:1px;</string>
+border-width:1px;
+border : 2px solid black	;
+}
+
+</string>
    </property>
    <property name="placeholderText">
     <string>ID</string>
@@ -403,12 +398,8 @@ border-style:outset;
 border-radius:10px;
 border-color:#FFFFFF;
 border-width:1px;
-
-}
-QPushButton:hover{
-background-color:#FFC107;
-}
-</string>
+background: #968C8C;
+}</string>
    </property>
    <property name="text">
     <string>ATUALIZAR</string>
@@ -431,7 +422,7 @@ background-color:#FFC107;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>STATUS: </string>
@@ -447,7 +438,7 @@ background-color:#FFC107;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Feminino</string>
@@ -470,7 +461,7 @@ background-color:#FFC107;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Genero:</string>
@@ -486,7 +477,7 @@ background-color:#FFC107;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Masculino </string>
@@ -518,6 +509,11 @@ border : 2px solid #1E90FF	;
    </property>
    <item>
     <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item>
+    <property name="text">
      <string>0</string>
     </property>
    </item>
@@ -544,7 +540,7 @@ border : 2px solid #1E90FF	;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Permissão</string>
@@ -559,8 +555,11 @@ border : 2px solid #1E90FF	;
      <height>351</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);</string>
+   </property>
    <property name="title">
-    <string/>
+    <string>PREENCHER DADOS</string>
    </property>
   </widget>
   <zorder>groupBox</zorder>

@@ -20,7 +20,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(60,60,60);</string>
+   <string notr="true">background: #F1F1F1;</string>
   </property>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
@@ -103,6 +103,7 @@ border-style:outset;
 border-radius:20px;
 border-color: white;
 border-width:1px;
+background: #968C8C;
 }
 QPushButton:hover{
 background-color:#1E90FF	;
@@ -139,7 +140,7 @@ background-color:#1E90FF	;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>Login</string>
@@ -190,6 +191,7 @@ border-style:outset;
 border-radius:20px;
 border-color: white;
 border-width:1px;
+background: #968C8C;
 }
 QPushButton:hover{
 background-color:#00FF7F	;
