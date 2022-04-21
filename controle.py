@@ -1,26 +1,15 @@
-from ast import Global, IsNot, Return
-import email
-from msilib.schema import ComboBox
-from time import sleep, time
-from PyQt5 import uic,QtGui,QtCore,QtWidgets
-from PyQt5.QtWidgets import QTableWidgetItem 
-import mysql.connector
-from pip import main 
+from Database.conexao import conexao
+from PyQt5 import uic,QtGui,QtWidgets
+from PyQt5.QtWidgets import QMessageBox 
 from pyfiglet import figlet_format
-
 from termcolor import colored
-Texto = figlet_format("PyQt5 e MySQL ",width=200)
-Texto = colored(Texto,"red")
 
-print(Texto)
+texto = figlet_format("PyQt5 e MySQL ",width=200)
+texto = colored(texto,"red")
+print(texto)
 
-# result = pyfiglet.figlet_format("PyQt5 e MYSQL")
-# print(result)
-
-conexao = mysql.connector.connect(host="localhost",user="root",password="",database="db_user")
-
-# METODO DE LOGIN 
 def Login(): 
+
     global Email, Password
     Email = login.lineEdit.text()
     Password = login.lineEdit_2.text()
@@ -42,6 +31,7 @@ def Login():
                 nivel_permissao = dados[0][2]
                 # print(nivel_permissao)
                 if Email == mail and Password == passwd and nivel_permissao == 1:
+                    
                     ListarAdm()
                 elif Password == passwd:
                     login.lineEdit.text()
@@ -56,7 +46,7 @@ def Login():
             login.label_4.setText("Digite um Email e Senha!", ValueError)
             # print("OCORREU UM ERRO NA VALIDAÇAO DO FORMULARIO",ValueError)
     return conexao
-# METODO CADASTRAR 
+
 def Cadastro():
     cadastro.show()
     Nome = cadastro.lineEdit_3.text()
@@ -85,8 +75,9 @@ def Cadastro():
         except ValueError:
             cadastro.label_6.setText("OCORREU UM ERRO ",ValueError)
     return conexao
-# METODO LISTAR, PARA USUARIO COMUM 
+
 def Listar(Email,Password):
+
     try:
         cursor = conexao.cursor()
         cursor.execute('SELECT tb_user_id FROM tb_user WHERE tb_user_email="{}" and tb_user_pass="{}"'.format(Email,Password))
@@ -116,7 +107,7 @@ def Listar(Email,Password):
         dash.cad_btn.hide()
         dash.btn_upt_user.show()
         dash.dell_btn.hide()
-        dash.resize(400, 450)
+        dash.resize(400, 480)
         dash.label_4.hide()
         dash.comboBox.hide()
         dash.groupBox.hide()
@@ -149,11 +140,20 @@ def Listar(Email,Password):
     except ValueError:
         print("OCORREU UM ERRO ",ValueError)
     return conexao
-# METODO DELETAR
+
 def Deletar():
-        linha = dash.tableWidget.currentRow()
-        dash.tableWidget.removeRow(linha)
-        if dash.tableWidget.rowCount()>0:
+
+        msgBox = QMessageBox()
+        msgBox.setIcon(QMessageBox.Information)
+        msgBox.setText("Deseja apagar esse registro?")
+        msgBox.setWindowTitle("Message")
+        msgBox.setStandardButtons(QMessageBox.Yes  | QMessageBox.No)
+        # msgBox.buttonClicked.connect(msgButtonClick)
+        returnValue = msgBox.exec()
+
+        if returnValue == QMessageBox.Yes :
+            linha = dash.tableWidget.currentRow()
+            # if dash.tableWidget.rowCount()>0:
             try:
                 cursor = conexao.cursor()
                 cursor.execute("SELECT tb_user_id FROM tb_user")
@@ -165,6 +165,7 @@ def Deletar():
                 else:
                     dados_limpo = dados_id[linha][0]
                     cursor.execute("DELETE FROM tb_user WHERE tb_user_id="+str(dados_limpo))
+                    dash.tableWidget.removeRow(linha)
                     conexao.commit()
                     dash.id.setText("")
                     dash.nome.setText("")
@@ -176,23 +177,23 @@ def Deletar():
                     dash.label_2.setText("DELETADO!")
             except ValueError:
                 print("OCORREU UM ERRO",ValueError)
-        else:
-            dash.label_2.setStyleSheet ('color: red')
-            dash.label_2.setText("NÃO HÁ REGISTROS!")
+        # else:
+        #     dash.label_2.setStyleSheet ('color: red')
+        #     dash.label_2.setText("NÃO HÁ REGISTROS!")
             # dash.close()
             
         return conexao
-# METODO LISTAR, APENAS PARA USUARIOS ADM 
+
 def ListarAdm():
-
-
-    dash.pushButton_2.move(760,30)
+    dash.comboBox.setCurrentIndex(0) 
+    dash.dell_btn.hide()
+    dash.pushButton_2.move(830,30)
     dash.resize(945,541)
     dash.upt_btn.resize(161,51)
-    dash.upt_btn.move(450,390)
+    dash.upt_btn.move(460,390)
 
     dash.label_2.setText("")
-    dash.label.move(50,30)
+    dash.label.move(30,30)
     dash.id.move(50,110)
     dash.nome.move(50,160)
     dash.email.move(50,210)
@@ -204,7 +205,7 @@ def ListarAdm():
     dash.tableWidget.show()   
     dash.upt_btn.show()
     dash.cad_btn.show()
-    dash.dell_btn.show()
+
 
     dash.label_5.move(60,310)
     dash.rdb_masc.move(60,340)
@@ -218,7 +219,8 @@ def ListarAdm():
     try:
         cursor = conexao.cursor()
         dash.label.text()
-        dash.label.setText("Gerenciamento de Usuario")
+        dash.label.setFont(QtGui.QFont("Arial", 20, QtGui.QFont.Bold))
+        dash.label.setText("Bem Vindo, Administrador")
         
         cursor.execute("SELECT*FROM tb_user")
         dados_lidos = cursor.fetchall()
@@ -230,42 +232,47 @@ def ListarAdm():
     except ValueError:
         print('ERRO',ValueError)
     return conexao
+
 def PegaDados():
     try:
         linha = dash.tableWidget.currentRow()
         cursor = conexao.cursor()
         cursor.execute("SELECT tb_user_id FROM tb_user")
         dados_id = cursor.fetchall()
-        id = dados_id[linha][0]
-        cursor.execute("SELECT*FROM tb_user WHERE tb_user_id="+str(id))       
-        usuario = cursor.fetchall()
-
-        global valor_do_id
-        valor_do_id = id
-
-        dash.id.setText(str(usuario[0][0]))
-        dash.nome.setText(str(usuario[0][1]))
-        dash.email.setText(str(usuario[0][2]))
-        dash.senha.setText(str(usuario[0][3]))
-        global sexo
-        sexo = ""
-        if usuario[0][4]=="":
-            print('SEM DADOS')
-        elif usuario[0][4]=="M":
-            sexo ="M"
-            dash.rdb_masc.setChecked(True)
-        elif usuario[0][4]=="F":
-            sexo = "F"
-            dash.rdb_femi.setChecked(True)
-
-
-        if int(usuario[0][5]) == 0:
-            permissao = dash.comboBox.setCurrentText(str(usuario[0][5]))
+        if dados_id ==[]:
+            dash.label_2.setText("NAO HÁ REGISTROS!")
         else:
-            permissao = dash.comboBox.setCurrentText(str(usuario[0][5]))
-
+            id = dados_id[linha][0]
+            cursor.execute("SELECT*FROM tb_user WHERE tb_user_id="+str(id))       
+            usuario = cursor.fetchall()
+    
+            global valor_do_id
+            valor_do_id = id
+    
+            dash.id.setText(str(usuario[0][0]))
+            dash.nome.setText(str(usuario[0][1]))
+            dash.email.setText(str(usuario[0][2]))
+            dash.senha.setText(str(usuario[0][3]))
+            global sexo
+            sexo = ""
+            if usuario[0][4]=="":
+                print('SEM DADOS')
+            elif usuario[0][4]=="M":
+                sexo ="M"
+                dash.rdb_masc.setChecked(True)
+            elif usuario[0][4]=="F":
+                sexo = "F"
+                dash.rdb_femi.setChecked(True)
+    
+    
+            if int(usuario[0][5]) == 0:
+                permissao = dash.comboBox.setCurrentText(str(usuario[0][5]))
+            else:
+                permissao = dash.comboBox.setCurrentText(str(usuario[0][5]))
+    
     except ValueError:
         print('OCORREU UM ERRO',ValueError)
+
 def AlteraDados():
     nome =  dash.nome.text()
     email=  dash.email.text()
@@ -293,12 +300,13 @@ def AlteraDados():
     except ValueError:
         print('ERRO',ValueError)
     return conexao
+
 def AlteraDadosUsuario():
     id = dash.id.text()
     nome =  dash.nome.text()
     email=  dash.email.text()
     senha=  dash.senha.text()
-    dash.label_2.move(150,370)
+    dash.label_2.move(150,430)
     sexo = ""
     if dash.rdb_femi.isChecked():
         sexo = "F"
@@ -318,16 +326,46 @@ def AlteraDadosUsuario():
         print('ERRO',ValueError)
     return conexao
 
-#  FUNÇOES DE CHAMADA E FECHAMENTO DE FORMULARIO
+def CadastrarDadosUsuario():
+    Nome = dash.nome.text()
+    Email = dash.email.text()
+    Password = dash.senha.text()
+    sexo = ""
+    permissao = dash.comboBox.currentText()
+    if(dash.rdb_masc.isChecked()):
+        sexo = "M"
+    elif(dash.rdb_femi.isChecked()):
+        sexo = "F"
+    
+    if  Nome=="" or Email =="" or Password =="" or sexo=="":
+        dash.label_2.setText("PREENCHA TODOS OS CAMPOS!")
+    else:
+        try:
+            cursor = conexao.cursor()
+            Insert = f'INSERT INTO tb_user(tb_user.tb_user_nome,tb_user.tb_user_email,tb_user_pass,tb_user_sexo,tb_user_permission) VALUES("{Nome}","{Email}", "{Password}","{sexo}","{permissao}")'
+            cursor.execute(Insert)
+            conexao.commit()
+            dash.label_2.text()
+            dash.label_2.setText("CADASTRADO!")
+            dash.nome.setText("")
+            dash.email.setText("")
+            dash.senha.setText("")
+        except ValueError:
+            cadastro.label_6.setText("OCORREU UM ERRO ",ValueError)
+    return conexao  
+
 def ChamaCad():
     login.label_4.setText("")
     cadastro.show()
     login.close()
+
 def Chamalog():
     cadastro.label_6.setText("")
     login.show()
     cadastro.close()
+
 def closeDash():
+    login.label_4.setText("")
     login.lineEdit.text()
     login.lineEdit.setText("")  
     login.lineEdit_2.text()
@@ -335,19 +373,19 @@ def closeDash():
     dash.close()
     login.show()
 
-app = QtWidgets.QApplication([])
 
+app = QtWidgets.QApplication([])
 cadastro = uic.loadUi('Projeto-PyQt5---CRUD-/Ui/cadastro.ui')
 login = uic.loadUi("Projeto-PyQt5---CRUD-/Ui/login.ui")
-listar = uic.loadUi("Projeto-PyQt5---CRUD-/Ui/listar.ui")
 dash  = uic.loadUi('Projeto-PyQt5---CRUD-/Ui/dashboard.ui')
 
 
-dash.dell_btn.clicked.connect(Deletar)
+dash.tableWidget.doubleClicked.connect(Deletar)
 dash.tableWidget.doubleClicked.connect(PegaDados)
 dash.btn_upt_user.clicked.connect(AlteraDadosUsuario)
 dash.upt_btn.clicked.connect(AlteraDados)
 dash.pushButton_2.clicked.connect(closeDash)
+dash.cad_btn.clicked.connect(CadastrarDadosUsuario)
 
 cadastro.pushButton.clicked.connect(Cadastro)
 cadastro.pushButton_2.clicked.connect(Chamalog)
@@ -355,6 +393,16 @@ cadastro.pushButton_2.clicked.connect(Chamalog)
 login.pushButton.clicked.connect(Login)
 login.pushButton_2.clicked.connect(ChamaCad)
 
-# teste 
 login.show()
 app.exec()
+
+
+
+
+
+
+
+
+
+
+
