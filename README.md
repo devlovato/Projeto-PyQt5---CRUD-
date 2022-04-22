@@ -6,24 +6,25 @@ Projeto criado com o foco de aprendizado.
     <img alt="Capa" title="#Sistema-login-index" src="./images/index_web.png" />
 </h1>
 
-<h4 align="center"> 
-	🚧  Sistema Login 🚀 Em construção  🚧
-</h4>
-
+<h3 align="center"> 
+	 Gerenciador de Usuario utilizando Python e MySQL 🚀 
+     <br>Em desenvolvimento 👩‍💻</label>
+</h3>
 <p align="center">
- <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-funcionalidades">Funcionalidades</a> •
- <a href="#-layout">Layout</a> • 
- <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#user-content--licença">Licença</a>
+ <a style="text-decoration: none;" href="#-sobre-o-projeto">Sobre</a> •
+ <a style="text-decoration: none;" href="#-funcionalidades">Funcionalidades</a> •
+ <a style="text-decoration: none;" href="#-layout">Layout</a> • 
+ <a style="text-decoration: none;" href="#-tecnologias">Tecnologias</a>
 </p>
 
 ## 💻 Sobre o projeto
 
-🚀 Sistema login - é uma plataforma web que realiza cadastro de usuários e login em sua home page pessoal.
+🚀 Gerenciador de Usuario - é uma plataforma desktop que realiza o gerenciamento de usuários cadastrados, permitindo que o administrador possa criar, alterar, e deletar os dados do usuario.
+O usuario, caso nao tenha cadastro poderá se registrar, e em seguida fazer o login, onde será redirecionado para um tela com as informaçoes cadastradas por ele(caso o nivel de permissao seja 0), onde o mesmo apenas poderá atualizar as suas informações. O administrador, poderá acessar o sistema, onde será exibido as informações do usuario, tais como: nome, email,senha, sexo e o nivel de permissao do usuario em questão. É importante ressaltar, que todos os usuario que nao possuem cadastro na base de dados, tem por padrao a permissao 0, que limita o usuario, à apenas altear suas respectivas informações.
 
-Projeto desenvolvido durante a **Formação Full Stack** oferecida pela [Recode](https://recode.org.br/).
-A Recode é uma organização social que promove o empoderamento digital. Por meio da criação e disseminação de metodologias de formação empreendedora e do uso de ferramentas digitais, busca ampliar o impacto de facilitadores em comunidades, escolas e bibliotecas e estimular o uso ético, consciente e cidadão da tecnologia.
+
+
+Projeto desenvolvido para ampliar os meus conhecimentos na linguagem em questão, e visando o desenvolvimento do projeto com  <strong>Planejamento</strong> e <strong>Disciplina</strong>, para que os resultados saissem conforme o planejado.
 
 ---
 
@@ -58,58 +59,48 @@ IMAGENS
 Img
 
 ## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Primeiro</th>
-      <th scope="col">Último</th>
-      <th scope="col">Nickname</th>
+      <th scope="col">Tecnologia</th>
+      <th scope="col">Versão </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>Python</td>
+      <td>3.9.10</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <td>MySQL</td>
+      <td>8.0</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <td>Qt Designer</td>
+      <td>5.11.1</td>
     </tr>
   </tbody>
 </table>
 
-As seguintes ferramentas foram usadas na construção do projeto:
+#### OBS: Funciona bem com a versao 21.2.4 do pip e a versao 3.9.10 do python
 
-- Python
 
-- MySQL
-
-- Qt Designer
-
-- CSS
 
 #### **Utilitários**
 
 - Editor: **[Visual Studio Code](https://code.visualstudio.com/)**
-- Banco de dados: **[MySql Workbench](https://www.mysql.com/products/workbench/)**
-- PHP: **[PHPMyAdmin](https://www.phpmyadmin.net/)**
+- Banco de dados: **[MySql Workbench](https://www.mysql.com/products/workbench)**
+- Qt Designer: **[Qt Designer](https://www.qt.io/download)**
 
 ---
 
 ## 📝 Créditos
 
-Orgulhosamente feito durante as monitorias do curso de Full Stack da Recode Pro 2020, com auxílio do [Guilherme Avelino](https://github.com/Guilherme1612) e do [José Alisson](https://github.com/joseAllisson)
-
-Feito com ❤️ por Gabi Vespoli 
-👋🏽 [Entre em contato!](https://www.linkedin.com/in/gabihvespoli/)
+Disciplina é a ponte entre metas e realizações.
+👋🏽 [Entre em contato!](https://www.linkedin.com/in/eduardo-silva17/)
