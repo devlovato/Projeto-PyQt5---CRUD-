@@ -27,14 +27,14 @@ Projeto criado com o foco de aprendizado.
 
 ---
 
-## ⚙️ Funcionalidades Usuário Nível 0
+## ⚙️ Usuário Nível 0
 
 - [x] Ler as respectivas informações relacionada ao usuário Logado
 
 - [x] Alterar as informações do o seu respectivo usuário
 
 
-## ⚙️ Funcionalidades Usuário Nível 1
+## ⚙️ Nível 1
 
 - [x] Listar Usuários
 
