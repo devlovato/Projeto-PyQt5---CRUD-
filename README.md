@@ -19,26 +19,31 @@ Projeto criado com o foco de aprendizado.
 
 ## 💻 Sobre o projeto
 
-🚀 Gerenciador de Usuario - é uma plataforma desktop que realiza o gerenciamento de usuários cadastrados, permitindo que o administrador possa criar, alterar, e deletar os dados do usuario.
-O usuario, caso nao tenha cadastro poderá se registrar, e em seguida fazer o login, onde será redirecionado para um tela com as informaçoes cadastradas por ele(caso o nivel de permissao seja 0), onde o mesmo apenas poderá atualizar as suas informações. O administrador, poderá acessar o sistema, onde será exibido as informações do usuario, tais como: nome, email,senha, sexo e o nivel de permissao do usuario em questão. É importante ressaltar, que todos os usuario que nao possuem cadastro na base de dados, tem por padrao a permissao 0, que limita o usuario, à apenas altear suas respectivas informações.
+🚀 Gerenciador de  Usuário - é uma aplicação desktop que realiza o gerenciamento dos usuários cadastrados. A aplicação possui dois tipos de nível de acesso, o nível 0 e o nível 1, o usuário que possui o nível de acesso 0 pode apenas realizar a alteração das suas informações. Já o usuário que possui o nível de acesso 1, é considerado administrador, pois o mesmo pode criar, alterar e deletar os dados dos demais usuários no banco de dados .
 
+O usuário, caso não tenha cadastro poderá se registrar, e em seguida fazer o login, onde será redirecionado para um tela com as informações cadastradas por ele(caso o nível de permissão seja 0), onde o mesmo apenas poderá atualizar as suas informações. O administrador poderá acessar o sistema, onde as informações do usuario, tais como: nome, e-mail, senha, sexo e o nível de permissão do usuario em questão, serão exibidas para o administrador onde ele poderá realizar o gerenciamento dos usuários cadastrados. É importante ressaltar, que todos os usuários que não possuem permissão nível 1, definidas pelo administrador, têm por padrão a permissão nível 0, que limita o usuário, à apenas visualizar e alterar suas respectivas informações.
 
-
-Projeto desenvolvido para ampliar os meus conhecimentos na linguagem em questão, e visando o desenvolvimento do projeto com  <strong>Planejamento</strong> e <strong>Disciplina</strong>, para que os resultados saissem conforme o planejado.
+Projeto desenvolvido para ampliar os meus conhecimentos na linguagem em questão, e visando o desenvolvimento do projeto com <strong>Planejamento</strong>e <strong>Disciplina</strong>, para que os resultados saírem conforme o planejado.
 
 ---
 
-## ⚙️ Funcionalidades
+## ⚙️ Funcionalidades Nível 0
 
-- [x]
+- [x] Ler as respectivas informações relacionada ao usuário Logado
 
-- [x]
+- [x] Alterar as informações do o seu respectivo usuário
 
-- [x]
 
-- [x]
+## ⚙️ Funcionalidades Nível 1
 
-- [x]
+- [x] Listar Usuários
+
+- [x] Cadastrar Usuários
+
+- [x] Alterar Usuários
+
+- [x] Deletar Usuários
+
 
 ---
 
@@ -60,11 +65,10 @@ Img
 
 ## 🛠 Tecnologias
 
-As seguintes ferramentas foram usadas na construção do projeto:
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">💻</th>
       <th scope="col">Tecnologia</th>
       <th scope="col">Versão </th>
     </tr>
@@ -87,11 +91,12 @@ As seguintes ferramentas foram usadas na construção do projeto:
     </tr>
   </tbody>
 </table>
+<br>
+<h3>Gerenciador de Pacote - PIP <strong>v21.2.4</strong></h3>
+<br>
 
-#### OBS: Funciona bem com a versao 21.2.4 do pip e a versao 3.9.10 do python
 
-
-
+As seguintes ferramentas foram usadas na construção do projeto:
 #### **Utilitários**
 
 - Editor: **[Visual Studio Code](https://code.visualstudio.com/)**
@@ -99,8 +104,3 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - Qt Designer: **[Qt Designer](https://www.qt.io/download)**
 
 ---
-
-## 📝 Créditos
-
-Disciplina é a ponte entre metas e realizações.
-👋🏽 [Entre em contato!](https://www.linkedin.com/in/eduardo-silva17/)
