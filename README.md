@@ -9,9 +9,10 @@
 </h3>
 <p align="center">
  <a style="text-decoration: none;" href="#-sobre-o-projeto">Sobre</a> •
- <a style="text-decoration: none;" href="#-usuario ">Usuario</a> •
+ <a style="text-decoration: none;" href="#-usuario ">Nível de Permissão</a> •
  <a style="text-decoration: none;" href="#-layout">Layout</a> • 
  <a style="text-decoration: none;" href="#-tecnologias">Tecnologias</a>
+ <a style="text-decoration: none;" href="#-bibliotecas">Bibliotecas</a>
 </p>
 
 ---
@@ -22,14 +23,14 @@
 <p align="justify"> Projeto desenvolvido para ampliar os meus conhecimentos na linguagem em questão, e visando o desenvolvimento do projeto com <strong>Planejamento</strong>e <strong>Disciplina</strong>, para que os resultados Saíssem  conforme o planejado.</p> 
 
 ---
-## ⚙️ Usuário Nível 0
+## ⚙️ Usuário com Permissão Nível 0
 
 - [x] Ler as respectivas informações relacionada ao usuário Logado
 
 - [x] Alterar as informações do o seu respectivo usuário
 
 
-## ⚙️ Usuário Nível 1
+## ⚙️ Usuário com Permissão Nível 1
 
 - [x] Listar Usuários
 
@@ -86,7 +87,6 @@
     </tr>
   </tbody>
 </table>
-
 <br>
 
 ### Gerenciador de Pacote
@@ -111,7 +111,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 <br>
 
-## Bibliotecas: 
+## 📚 Bibliotecas: 
 
 
 * CONNECTOR
