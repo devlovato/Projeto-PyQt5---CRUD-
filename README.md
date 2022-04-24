@@ -14,6 +14,7 @@
  <a style="text-decoration: none;" href="#-tecnologias">Tecnologias</a>
 </p>
 
+---
 ## 💻 Sobre o projeto
 
 <p align="justify"> 🚀 Gerenciador de  Usuário - é uma aplicação desktop que realiza o gerenciamento dos usuários cadastrados. A aplicação possui dois tipos de nível de acesso, o nível 0 e o nível 1, o usuário que possui o nível de acesso 0 pode apenas realizar a alteração das suas informações. Já o usuário que possui o nível de acesso 1, é considerado administrador, pois o mesmo pode criar, alterar e deletar os dados dos demais usuários no banco de dados .</p> 
