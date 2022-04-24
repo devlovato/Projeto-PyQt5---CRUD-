@@ -90,6 +90,8 @@
 
 <br>
 
+## Gerenciador de Pacote
+
 <table>
   <tbody>
     <tr>
@@ -100,11 +102,7 @@
   </tbody>
 </table>
 
-<br>
-<h3>Gerenciador de Pacote - PIP <strong>v21.2.4</strong></h3>
-<br>
-
-
+---
 As seguintes ferramentas foram usadas na construção do projeto:
 #### **Utilitários**
 
