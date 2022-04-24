@@ -9,7 +9,7 @@
 </h3>
 <p align="center">
  <a style="text-decoration: none;" href="#-sobre-o-projeto">Sobre</a> •
- <a style="text-decoration: none;" href="#-usuario ">Nível de Permissão</a> •
+ <a style="text-decoration: none;" href="#-usuario ">Funcionalidades</a> •
  <a style="text-decoration: none;" href="#-layout">Layout</a> • 
  <a style="text-decoration: none;" href="#-tecnologias">Tecnologias</a>
  <a style="text-decoration: none;" href="#-bibliotecas">Bibliotecas</a>
