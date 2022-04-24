@@ -9,7 +9,7 @@
 </h3>
 <p align="center">
  <a style="text-decoration: none;" href="#-sobre-o-projeto">Sobre</a> •
- <a style="text-decoration: none;" href="#-usuario ">Funcionalidades</a> •
+ <a style="text-decoration: none;" href="#-usuario ">Usuario</a> •
  <a style="text-decoration: none;" href="#-layout">Layout</a> • 
  <a style="text-decoration: none;" href="#-tecnologias">Tecnologias</a>
 </p>
@@ -22,8 +22,7 @@
 <p align="justify"> Projeto desenvolvido para ampliar os meus conhecimentos na linguagem em questão, e visando o desenvolvimento do projeto com <strong>Planejamento</strong>e <strong>Disciplina</strong>, para que os resultados Saíssem  conforme o planejado.</p> 
 
 ---
-
-## ⚙️ Usuario Nível 0
+## ⚙️ Usuario
 
 - [x] Ler as respectivas informações relacionada ao usuário Logado
 
