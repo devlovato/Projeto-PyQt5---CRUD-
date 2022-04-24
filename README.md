@@ -112,7 +112,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - Editor: **[Visual Studio Code](https://code.visualstudio.com/)**
 - Banco de dados: **[MySql Workbench](https://www.mysql.com/products/workbench)**
 - Qt Designer: **[Qt Designer](https://www.qt.io/download)**
-- Diagrams.net: **[Diagrams.net](https://app.diagrams.net/d)**
+- Diagrams.net: **[Diagrams.net](https://app.diagrams.net)**
 <br>
 
 ## 📚 Bibliotecas: 
