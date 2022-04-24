@@ -4,12 +4,12 @@
 </h1>
 
 <h3 align="center"> 
-	 Gerenciador de Usuario utilizando Python e MySQL 🚀 
+	 Gerenciador de Usuário utilizando Python e MySQL 🚀 
      <br>Em desenvolvimento 👩‍💻</label>
 </h3>
 <p align="center">
  <a style="text-decoration: none;" href="#-sobre-o-projeto">Sobre</a> •
- <a style="text-decoration: none;" href="#-funcionalidades">Funcionalidades</a> •
+ <a style="text-decoration: none;" href="Usuário-Nível-0">Funcionalidades</a> •
  <a style="text-decoration: none;" href="#-layout">Layout</a> • 
  <a style="text-decoration: none;" href="#-tecnologias">Tecnologias</a>
 </p>
