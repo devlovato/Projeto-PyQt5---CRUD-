@@ -1,9 +1,5 @@
-# Projeto-PyQt5---CRUD-
-Projeto criado com o foco de aprendizado.
-
-</p>
 <h1 align="center">
-<img width="1388" alt="Component 3" src="https://user-images.githubusercontent.com/99847770/164953170-f4dcae81-5ca6-451c-b149-0cad9443db25.png">
+<img width="1388" alt="Component 3" src="https://user-images.githubusercontent.com/99847770/164995927-e70c15f4-a784-4f78-af19-f6560e81d752.png">
     
 </h1>
 
@@ -21,8 +17,6 @@ Projeto criado com o foco de aprendizado.
 ## 💻 Sobre o projeto
 
 <p align="justify"> 🚀 Gerenciador de  Usuário - é uma aplicação desktop que realiza o gerenciamento dos usuários cadastrados. A aplicação possui dois tipos de nível de acesso, o nível 0 e o nível 1, o usuário que possui o nível de acesso 0 pode apenas realizar a alteração das suas informações. Já o usuário que possui o nível de acesso 1, é considerado administrador, pois o mesmo pode criar, alterar e deletar os dados dos demais usuários no banco de dados .</p> 
-
-<p align="justify"> O usuário, caso não tenha cadastro poderá se registrar, e em seguida fazer o login, onde será redirecionado para um tela com as informações cadastradas por ele(caso o nível de permissão seja 0), onde o mesmo apenas poderá atualizar as suas informações. O administrador poderá acessar o sistema, onde as informações do usuario, tais como: nome, e-mail, senha, sexo e o nível de permissão do usuario em questão, serão exibidas para o administrador onde ele poderá realizar o gerenciamento dos usuários cadastrados. É importante ressaltar, que todos os usuários que não possuem permissão nível 1, definidas pelo administrador, têm por padrão a permissão nível 0, que limita o usuário, à apenas visualizar e alterar suas respectivas informações.</p> 
 
 <p align="justify"> Projeto desenvolvido para ampliar os meus conhecimentos na linguagem em questão, e visando o desenvolvimento do projeto com <strong>Planejamento</strong>e <strong>Disciplina</strong>, para que os resultados Saíssem  conforme o planejado.</p> 
 
@@ -104,3 +98,24 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - Editor: **[Visual Studio Code](https://code.visualstudio.com/)**
 - Banco de dados: **[MySql Workbench](https://www.mysql.com/products/workbench)**
 - Qt Designer: **[Qt Designer](https://www.qt.io/download)**
+
+<br>
+
+## Bibliotecas: 
+
+
+* CONNECTOR
+
+> PIP INSTALL MYSQL-CONNECTOR-PYTHON
+
+* PYQT5
+
+> PIP INSTALL PYQT5
+
+* PYFIGLET
+
+>PIP INSTALL PYFIGLET
+
+* COLORED 
+
+>PIP INSTALL COLORED
