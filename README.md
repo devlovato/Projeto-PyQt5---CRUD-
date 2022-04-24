@@ -34,7 +34,7 @@ Projeto criado com o foco de aprendizado.
 - [x] Alterar as informações do o seu respectivo usuário
 
 
-## ⚙️ Nível 1
+## ⚙️ Usuário Nível 1
 
 - [x] Listar Usuários
 
@@ -49,19 +49,20 @@ Projeto criado com o foco de aprendizado.
 
 ## 🎨 Layout
 
-O layout da aplicação:
+<br>
 
--
--
--
-IMAGENS
--
--
--
+## Tela de Login
+![TELA DE LOGIN](https://user-images.githubusercontent.com/99847770/164952167-5aca7242-32b2-4e95-8c13-6869e42168e6.PNG)
+## Tela de Cadastro
+![TELA DE CADASTRO](https://user-images.githubusercontent.com/99847770/164952189-b73acb2e-06fd-4c5b-99a0-7841e804b544.PNG)
+## Tela de Alteraçao de Usuário nv0
+![tela usuario normal nao adimin](https://user-images.githubusercontent.com/99847770/164952200-2184e586-3748-4423-acd0-b808038fd904.PNG)
+## Tela de Gerenciamento de Usuário
+![Pagina adm](https://user-images.githubusercontent.com/99847770/164952268-b80d8998-0221-4320-bffd-175da6b261ad.PNG)
 
-### Desktop
+---
 
-Img
+<br>
 
 ## 🛠 Tecnologias
 
