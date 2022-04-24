@@ -44,7 +44,6 @@
 
 ## 🎨 Layout
 
-<br>
 
 ## Tela de Login
 ![TELA DE LOGIN](https://user-images.githubusercontent.com/99847770/164952167-5aca7242-32b2-4e95-8c13-6869e42168e6.PNG)
@@ -90,7 +89,7 @@
 
 <br>
 
-## Gerenciador de Pacote
+### Gerenciador de Pacote
 
 <table>
   <tbody>
