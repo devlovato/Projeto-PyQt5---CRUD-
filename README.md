@@ -22,7 +22,7 @@
 <p align="justify"> Projeto desenvolvido para ampliar os meus conhecimentos na linguagem em questão, e visando o desenvolvimento do projeto com <strong>Planejamento</strong>e <strong>Disciplina</strong>, para que os resultados Saíssem  conforme o planejado.</p> 
 
 ---
-## ⚙️ Usuario
+## ⚙️ Usuário Nível 0
 
 - [x] Ler as respectivas informações relacionada ao usuário Logado
 
@@ -87,6 +87,19 @@
     </tr>
   </tbody>
 </table>
+
+<br>
+
+<table>
+  <tbody>
+    <tr>
+      <th scope="row">➙</th>
+      <td>pip</td>
+      <td>21.2.4</td>
+    </tr>
+  </tbody>
+</table>
+
 <br>
 <h3>Gerenciador de Pacote - PIP <strong>v21.2.4</strong></h3>
 <br>
