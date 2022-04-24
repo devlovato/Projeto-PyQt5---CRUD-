@@ -3,7 +3,8 @@ Projeto criado com o foco de aprendizado.
 
 </p>
 <h1 align="center">
-    <img alt="Capa" title="#Sistema-login-index" src="./images/index_web.png" />
+<img width="1388" alt="Component 3" src="https://user-images.githubusercontent.com/99847770/164953170-f4dcae81-5ca6-451c-b149-0cad9443db25.png">
+    
 </h1>
 
 <h3 align="center"> 
