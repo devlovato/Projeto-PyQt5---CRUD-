@@ -24,9 +24,9 @@
 
 ## ⚙️ Usuário Nível 0
 
-- [x] Ler as respectivas informações relacionada ao usuário Logado
+          - [x] Ler as respectivas informações relacionada ao usuário Logado
 
-- [x] Alterar as informações do o seu respectivo usuário
+    - [x] Alterar as informações do o seu respectivo usuário
 
 
 ## ⚙️ Usuário Nível 1
