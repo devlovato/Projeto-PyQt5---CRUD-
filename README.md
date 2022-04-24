@@ -85,6 +85,11 @@
       <td>Qt Designer</td>
       <td>5.11.1</td>
     </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Diagrams</td>
+      <td>#</td>
+    </tr>
   </tbody>
 </table>
 <br>
@@ -107,7 +112,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - Editor: **[Visual Studio Code](https://code.visualstudio.com/)**
 - Banco de dados: **[MySql Workbench](https://www.mysql.com/products/workbench)**
 - Qt Designer: **[Qt Designer](https://www.qt.io/download)**
-
+- Diagrams.net: **[Diagrams.net](https://app.diagrams.net/d)**
 <br>
 
 ## 📚 Bibliotecas: 
