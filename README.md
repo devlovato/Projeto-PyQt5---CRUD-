@@ -9,7 +9,7 @@
 </h3>
 <p align="center">
  <a style="text-decoration: none;" href="#-sobre-o-projeto">Sobre</a> •
- <a style="text-decoration: none;" href="#-Usuário ">Funcionalidades</a> •
+ <a style="text-decoration: none;" href="#-Usuario ">Funcionalidades</a> •
  <a style="text-decoration: none;" href="#-layout">Layout</a> • 
  <a style="text-decoration: none;" href="#-tecnologias">Tecnologias</a>
 </p>
@@ -22,7 +22,7 @@
 
 ---
 
-## ⚙️ Usuário Nível 0
+## ⚙️ Usuario Nível 0
 
 - [x] Ler as respectivas informações relacionada ao usuário Logado
 
