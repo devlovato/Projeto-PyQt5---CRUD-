@@ -356,7 +356,7 @@ border : 2px solid #1E90FF	;
     <rect>
      <x>160</x>
      <y>470</y>
-     <width>291</width>
+     <width>381</width>
      <height>31</height>
     </rect>
    </property>
@@ -464,7 +464,7 @@ background: #968C8C;
     <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
-    <string>Genero:</string>
+    <string>Gênero:</string>
    </property>
   </widget>
   <widget class="QRadioButton" name="rdb_masc">

@@ -28,7 +28,7 @@
      <x>110</x>
      <y>160</y>
      <width>191</width>
-     <height>35</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -54,9 +54,9 @@ border : 2px solid #1E90FF	;
    <property name="geometry">
     <rect>
      <x>110</x>
-     <y>200</y>
+     <y>210</y>
      <width>191</width>
-     <height>35</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -216,7 +216,7 @@ background-color:#00FF7F	;
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../../img-user.png</pixmap>
+    <pixmap>../assets/img-user.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

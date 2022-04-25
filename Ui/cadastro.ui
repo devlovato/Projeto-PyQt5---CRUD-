@@ -206,7 +206,7 @@ border : 2px solid #1E90FF	;
     <string notr="true">color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
-    <string>Qual é o seu Genero?</string>
+    <string>Qual é o seu Gênero?</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
@@ -248,7 +248,7 @@ border : 2px solid #1E90FF	;
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../../personal.png</pixmap>
+    <pixmap>../assets/personal.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

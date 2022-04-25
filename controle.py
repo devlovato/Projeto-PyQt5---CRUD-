@@ -5,8 +5,9 @@ from pyfiglet import figlet_format
 from termcolor import colored
 
 texto = figlet_format("PyQt5 e MySQL ",width=200)
-texto = colored(texto,"red")
+texto = colored(texto,"cyan")
 print(texto)
+
 
 def Login(): 
 
@@ -19,11 +20,9 @@ def Login():
     else:
         try:    
             cursor = conexao.cursor()
-            # USANDO A FORMATAÇAO .FORMAT PARA FOMATAR O DADO VINDO DA MANEIRA CORRETA
             cursor.execute("SELECT tb_user_pass, tb_user_email,tb_user_permission FROM tb_user WHERE tb_user_email='{}' AND tb_user_pass='{}'".format(Email,Password))
-            # dados = []
             dados = cursor.fetchall()
-            if dados ==[]:
+            if dados == []:
                 login.label_4.setText("E-mail ou senha Incorretos")
             else:
                 passwd = dados[0][0]
@@ -31,9 +30,9 @@ def Login():
                 nivel_permissao = dados[0][2]
                 # print(nivel_permissao)
                 if Email == mail and Password == passwd and nivel_permissao == 1:
-                    
+                    dash.label_2.show()
                     ListarAdm()
-                elif Password == passwd:
+                elif Email == mail and Password == passwd:
                     login.lineEdit.text()
                     login.lineEdit.setText("")  
                     login.lineEdit_2.text()
@@ -53,9 +52,9 @@ def Cadastro():
     Email = cadastro.lineEdit.text()
     Password = cadastro.lineEdit_2.text()
     sexo = ""
-    if(cadastro.radioButton.isChecked()):
+    if cadastro.radioButton.isChecked():
         sexo = "M"
-    elif(cadastro.radioButton_2.isChecked()):
+    elif cadastro.radioButton_2.isChecked():
         sexo = "F"
     
     if  Nome=="" or Email =="" or Password =="" or sexo=="":
@@ -63,7 +62,7 @@ def Cadastro():
     else:
         try:
             cursor = conexao.cursor()
-            Insert = f'INSERT INTO tb_user(tb_user.tb_user_nome,tb_user.tb_user_email,tb_user_pass,tb_user_sexo) VALUES("{Nome}","{Email}", "{Password}","{sexo}")'
+            Insert = f'INSERT INTO tb_user(tb_user.tb_user_nome,tb_user.tb_user_email,tb_user_pass,tb_user_sexo,tb_user_permission) VALUES("{Nome}","{Email}", "{Password}","{sexo}","0")'
             cursor.execute(Insert)
             conexao.commit()
             cadastro.label_6.text()
@@ -87,7 +86,7 @@ def Listar(Email,Password):
         cursor.execute('SELECT tb_user_sexo FROM tb_user WHERE tb_user_email="{}" and tb_user_pass="{}"'.format(Email,Password))
         info = cursor.fetchall()
 
-        print(info[0][0])
+        # print(info[0][0])
         sexo = ""
         if info[0][0] =='':
             print('sem sexo')
@@ -100,9 +99,8 @@ def Listar(Email,Password):
            dash.rdb_femi.setChecked(True)
            sexo = "F"
 
-        print(sexo)
-
-
+        # print(sexo)
+        dash.label_3.hide()
         dash.tableWidget.hide()   
         dash.cad_btn.hide()
         dash.btn_upt_user.show()
@@ -112,7 +110,7 @@ def Listar(Email,Password):
         dash.comboBox.hide()
         dash.groupBox.hide()
         dash.pushButton_2.move(280,18)
-
+        dash.label_2.show()
         # HERE 
         dash.label_5.move(100,315)
         dash.rdb_masc.move(100,340)
@@ -130,7 +128,7 @@ def Listar(Email,Password):
         login.close()
         dash.show()
         dash.label.setFont(QtGui.QFont("Arial", 18, QtGui.QFont.Bold))
-        dash.label.setText("Bem Vindo, Usuario")
+        dash.label.setText("Bem Vindo, Usuário")
 
         dash.id.setText(str(id[0][0]))
         dash.nome.setText(nome[0][0])
@@ -171,20 +169,16 @@ def Deletar():
                     dash.nome.setText("")
                     dash.email.setText("")
                     dash.senha.setText("")
-                    # print("FOI APAGADO COM SUCESSO",dados_limpo)
                     dash.label_2.text()
                     dash.label_2.setStyleSheet ('color: Green')
                     dash.label_2.setText("DELETADO!")
             except ValueError:
                 print("OCORREU UM ERRO",ValueError)
-        # else:
-        #     dash.label_2.setStyleSheet ('color: red')
-        #     dash.label_2.setText("NÃO HÁ REGISTROS!")
-            # dash.close()
-            
         return conexao
 
 def ListarAdm():
+    dash.label_2.setText("")
+    dash.label_3.show()
     dash.comboBox.setCurrentIndex(0) 
     dash.dell_btn.hide()
     dash.pushButton_2.move(830,30)
@@ -255,14 +249,16 @@ def PegaDados():
             dash.senha.setText(str(usuario[0][3]))
             global sexo
             sexo = ""
-            if usuario[0][4]=="":
-                print('SEM DADOS')
-            elif usuario[0][4]=="M":
+
+
+            if usuario[0][4]=="M":
                 sexo ="M"
                 dash.rdb_masc.setChecked(True)
             elif usuario[0][4]=="F":
                 sexo = "F"
                 dash.rdb_femi.setChecked(True)
+            # else:
+            #     print('EXO VAZIO')
     
     
             if int(usuario[0][5]) == 0:
@@ -282,10 +278,13 @@ def AlteraDados():
         sexo = "M"
     elif dash.rdb_femi.isChecked():
         sexo ="F"
+    else:
+        dash.rdb_masc.setChecked(False)
+        dash.rdb_femi.setChecked(False)
     permissao = dash.comboBox.currentText()
     try:
         cursor = conexao.cursor()
-        if(nome=="" and email =="" and senha==""):
+        if nome=="" and email =="" and senha=="":
             dash.label_2.setText("PREENCHA OS CAMPOS!")
             dash.label_2.setStyleSheet ('color: red')
         else:
@@ -314,7 +313,7 @@ def AlteraDadosUsuario():
         sexo = "M"
     try:
         cursor = conexao.cursor()
-        if(nome=="" and email =="" and senha==""):
+        if nome=="" and email =="" and senha=="":
             dash.label_2.setText("Os campos vazios!")  
         else:
             cursor.execute("UPDATE tb_user SET tb_user_nome = '{}', tb_user_email ='{}',tb_user_pass='{}',tb_user_sexo ='{}' WHERE tb_user_id = {}".format(nome,email,senha,sexo,id))     
@@ -332,9 +331,9 @@ def CadastrarDadosUsuario():
     Password = dash.senha.text()
     sexo = ""
     permissao = dash.comboBox.currentText()
-    if(dash.rdb_masc.isChecked()):
+    if dash.rdb_masc.isChecked():
         sexo = "M"
-    elif(dash.rdb_femi.isChecked()):
+    elif dash.rdb_femi.isChecked():
         sexo = "F"
     
     if  Nome=="" or Email =="" or Password =="" or sexo=="":
@@ -360,11 +359,14 @@ def ChamaCad():
     login.close()
 
 def Chamalog():
+    dash.label_2.show()
     cadastro.label_6.setText("")
     login.show()
     cadastro.close()
 
 def closeDash():
+    dash.label_2.setText("")
+    dash.label_2.hide()
     login.label_4.setText("")
     login.lineEdit.text()
     login.lineEdit.setText("")  

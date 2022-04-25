@@ -1,8 +1,13 @@
 import mysql.connector
+from pyfiglet import figlet_format
+from termcolor import colored
+from mysql.connector import errorcode
+texto = figlet_format("DATA",width=200)
+texto = colored(texto,"blue")
+print(texto)
 conexao = mysql.connector.connect(host="localhost",user="root",password="")
 
 cursor = conexao.cursor()
-
 try:
     cursor.execute("CREATE DATABASE db_user;")
     # UTILIZA O BANCO DE DADOS
@@ -22,5 +27,5 @@ try:
     cursor.execute("INSERT INTO `db_user`.`tb_user` (`tb_user_nome`, `tb_user_email`, `tb_user_pass`, `tb_user_sexo`, `tb_user_permission`) VALUES ('Estela', 'estela@accenture.com', '465646', 'F', '0');")
     cursor.execute("INSERT INTO `db_user`.`tb_user` (`tb_user_nome`, `tb_user_email`, `tb_user_pass`, `tb_user_sexo`, `tb_user_permission`) VALUES ('Maria', 'maria@zoom.com', '545545', 'F', '0');")
     conexao.commit()
-except:
-    print('ERRO')
+except mysql.connector.Error as erro:
+    print('ERRO',erro)
