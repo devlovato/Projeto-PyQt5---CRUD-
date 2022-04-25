@@ -22,7 +22,18 @@
 
 <p align="justify"> Projeto desenvolvido para ampliar os meus conhecimentos na linguagem em questão, e visando o desenvolvimento do projeto com <strong>Planejamento</strong>e <strong>Disciplina</strong>, para que os resultados Saíssem  conforme o planejado.</p> 
 
+<br>
+
+<div style="width:100%">
+<a href="https://youtu.be/nSBnAsGxp30"><img src="assets/thumb.png" alt="img" style="float:right;"></a>
+</div>
+
 ---
+
+
+<br>
+
+
 ## ⚙️ Usuário com Permissão Nível 0
 
 - [x] Ler as respectivas informações relacionada ao usuário Logado
