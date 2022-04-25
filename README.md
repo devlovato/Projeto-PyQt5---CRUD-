@@ -24,6 +24,8 @@
 
 <br>
 
+##  Clique na Imagem para assistir o vídeo ⬇️
+
 <div style="width:100%">
 <a href="https://youtu.be/nSBnAsGxp30"><img src="https://user-images.githubusercontent.com/99847770/165003782-df0d694b-bee1-4484-8774-b0f691ec9b71.png" alt="img" style="float:right;"></a>
 </div>
